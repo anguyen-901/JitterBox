@@ -5,11 +5,11 @@ const loudness = require("loudness");
 let win = null;
 let quitting = false;
 function scheduleJitter(window) {
-  const delay = 3e4 + Math.random() * 3e4;
+  const delay = 1e4 + Math.random() * 2e4;
   setTimeout(async () => {
     try {
       const current = await loudness.getVolume();
-      const deltas = [-2, -1, 1, 2];
+      const deltas = [-2, -1, 3, 5];
       const delta = deltas[Math.floor(Math.random() * deltas.length)];
       const next = Math.max(0, Math.min(100, current + delta));
       await loudness.setVolume(next);
