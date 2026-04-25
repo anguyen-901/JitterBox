@@ -6,11 +6,11 @@ let win: BrowserWindow | null = null
 let quitting = false
 
 function scheduleJitter(window: BrowserWindow): void {
-  const delay = 30_000 + Math.random() * 30_000 // 30–60s
+  const delay = 10_000 + Math.random() * 20_000 // 10–30s
   setTimeout(async () => {
     try {
       const current = await loudness.getVolume()
-      const deltas = [-2, -1, 1, 2] as const
+      const deltas = [-2, -1, 3, 5] as const
       const delta = deltas[Math.floor(Math.random() * deltas.length)]!
       const next = Math.max(0, Math.min(100, current + delta))
       await loudness.setVolume(next)
