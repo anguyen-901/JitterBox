@@ -12,7 +12,7 @@ A cross-platform desktop app that turns adjusting system volume into a high-stak
 - **The input drifts** — the entire input field floats around the window on a sine wave that slowly gets worse the longer you use it.
 - **The UI flips** — every 8–20 seconds the entire interface mirrors horizontally without warning. Input still registers normally.
 - **It lies to you** — 40% of submissions silently misspell one word in the last 80ms before validation (e.g. `forty` → `fourty`), causing punishment.
-- **It drifts while you're not looking** — the volume jitters ±1–2% every 30–60 seconds even when the app is minimized.
+- **It drifts while you're not looking** — the volume jitters every 10–30 seconds even when the app is minimized. Deltas are asymmetric: it can drop by 1–2% but creep up by 3–5%, so it trends louder over time.
 - **There is no close button** — the "MAKE LOUDER" button in the title bar triggers punishment instead of closing. Cmd+Q does the same.
 
 ## Getting Started
