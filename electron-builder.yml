@@ -1,0 +1,32 @@
+appId: com.jitterbox.app
+productName: JitterBox
+copyright: Copyright © 2026
+
+directories:
+  output: dist-electron
+  buildResources: build
+
+files:
+  - out/**
+  - "!out/__tests__/**"
+
+mac:
+  category: public.app-category.utilities
+  target:
+    - target: dmg
+      arch: [x64, arm64]
+  darkModeSupport: false
+
+win:
+  target:
+    - target: nsis
+      arch: [x64]
+
+nsis:
+  oneClick: true
+  perMachine: false
+
+dmg:
+  window:
+    width: 540
+    height: 380
